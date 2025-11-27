@@ -21,7 +21,14 @@
         
         <nav class="flex items-center space-x-6 text-sm font-medium text-[#6C0D0E]">
           <a href="#" class="hover:text-[#983132]">GALERIA</a>
-          <a href="#" class="hover:text-[#983132]">LOGOUT</a>
+
+        <form method="POST" action="{{ route('login') }}">
+            @csrf
+            <button type="submit" class="hover:text-[#983132]">
+                LOGOUT
+            </button>
+        </form>
+
           <a href="#" class="hover:text-[#983132]">DASHBOARD</a>
           <a href="#" class="hover:text-[#983132]">SOBRE</a>
           <div class="w-10 h-10 rounded-full bg-gray-300"></div>

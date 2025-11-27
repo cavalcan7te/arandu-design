@@ -2,13 +2,14 @@
     <div class="flex flex-col md:flex-row min-h-screen">
         <!-- Lado Esquerdo - Imagem ocupa 100% da altura -->
         <div 
-            class="hidden md:block md:w-1/2 bg-cover bg-center"
+            class="hidden md:block md:w-1/2 bg-contain bg-no-repeat bg-center"
             style="background-image: url('{{ asset('images/banner-arandu 1.png') }}');">
         </div>
 
+
         <!-- Lado Direito - Formulário -->
         <div class="flex w-full md:w-1/2 items-center justify-center bg-white min-h-screen">
-            <div class="w-full max-w-md px-8 py-10">
+            <div class="w-full max-w-md px-8 py-10 shadow-2xl">
                 <h2 class="text-3xl font-bold text-center text-[#5B2C1D] mb-8 tracking-wide">
                     LOGIN
                 </h2>
@@ -23,15 +24,19 @@
                     <div>
                         <x-input-label for="email" :value="__('E-mail')" />
                         <x-text-input 
-                            id="email"
-                            class="block mt-1 w-full border border-[#5B2C1D] focus:border-[#8B4513] focus:ring-[#8B4513] rounded-md"
-                            type="email" 
-                            name="email" 
-                            :value="old('email')" 
-                            required 
-                            autofocus 
-                            autocomplete="username" 
-                        />
+                        id="email"
+                        class="block mt-1 w-full 
+                            py-1
+                            !bg-transparent
+                            !text-[#86391F]
+                            border-2 !border-[#86391F]
+                            rounded-sm"
+                        type="email" 
+                        name="email" 
+                        required 
+                        autocomplete="username"
+                    />
+
                         <x-input-error :messages="$errors->get('email')" class="mt-2" />
                     </div>
 
@@ -40,12 +45,21 @@
                         <x-input-label for="password" :value="__('Senha')" />
                         <x-text-input 
                             id="password"
-                            class="block mt-1 w-full border border-[#5B2C1D] focus:border-[#8B4513] focus:ring-[#8B4513] rounded-md"
+                            class="block mt-1 w-full
+                                py-1
+                                !bg-transparent
+                                text-[#86391F]
+                                border-2 !border-[#86391F]
+                                !focus:border-[#86391F]
+                                !focus:ring-[#86391F]
+                                rounded-sm"
                             type="password" 
                             name="password" 
                             required 
-                            autocomplete="current-password" 
+                            autocomplete="current-password"
                         />
+
+
                         <x-input-error :messages="$errors->get('password')" class="mt-2" />
                     </div>
 
